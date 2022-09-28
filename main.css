@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+
 }
 body {
     background-color: #D8BD8A;
@@ -67,16 +68,43 @@ body {
 }
 .resultP {
     font-family: 'Alegreya Sans', sans-serif;
-    font-size: 18px;
+    font-size: 28px;
+}
+.text1 {
+    font-family: 'Alegreya Sans', sans-serif;
+    text-transform: capitalize;
+    font-size: 26px;
 }
 .text2 {
     font-family: 'Alegreya Sans', sans-serif;
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: 26px;
 }
 .result {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.background1 {
+    background-color: #8AAE5B; 
+   background-color: #5579B4;
+    border-radius: 15px;
+    min-width: 20vw;
+    text-align: center;
+    padding: 10px;
+}
+.background2 {
+    background-color: #BF1A2F;
+    border-radius: 15px;
+    min-width: 20vw;
+    text-align: center;
+    padding: 10px;
+}
+.background3 {
+    background-color: #F7D002;
+    border-radius: 15px;
+    min-width: 20vw;
+    text-align: center;
+    padding: 10px;
 }

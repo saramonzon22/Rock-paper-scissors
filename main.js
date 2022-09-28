@@ -11,21 +11,26 @@ const resultText = document.querySelector('.text2');
 const choose = (ev) => {
     ev.preventDefault();
     const select = ev.target.value;
-    console.log(select)
     let myArray = ['rock', 'paper', 'scissors'];
     const random = Math.random() * myArray.length | 0;
     const value = myArray[random];
-    console.log(value)
     if (select === value) {
-        resultParraf.innerHTML = '¡Empate!'
+        resultParraf.innerHTML = 'Draw!'
+        resultParraf.classList.add('background3');
+        resultParraf.classList.remove('background2', 'background1');
     }
     else if (select === 'rock' && value === 'scissors' || select === 'paper' && value === 'rock' || select === 'scissors' && value === 'paper') {
-        resultParraf.innerHTML = '¡Ganaste!'
+        resultParraf.innerHTML = 'You won, congratulations!'
         resultText.innerHTML = value;
+        resultParraf.classList.add('background1');
+        resultParraf.classList.remove('background2', 'background3');
+
     }
     else if (select === 'paper' && value === 'scissors' || select === 'rock' && value === 'paper' || select === 'scissors' && value === 'rock') {
-        resultParraf.innerHTML = '¡Perdiste!'
+        resultParraf.innerHTML = 'You lost, try again!'
         resultText.innerHTML = value;
+        resultParraf.classList.add('background2');
+        resultParraf.classList.remove('background1', 'background3');
     }
     if (value === 'rock') {
         resultContainer.classList.add('rock');
