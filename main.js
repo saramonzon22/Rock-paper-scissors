@@ -14,24 +14,29 @@ const choose = (ev) => {
     let myArray = ['rock', 'paper', 'scissors'];
     const random = Math.random() * myArray.length | 0;
     const value = myArray[random];
-    if (select === value) {
-        resultParraf.innerHTML = 'Draw!'
-        resultParraf.classList.add('background3');
-        resultParraf.classList.remove('background2', 'background1');
-    }
-    else if (select === 'rock' && value === 'scissors' || select === 'paper' && value === 'rock' || select === 'scissors' && value === 'paper') {
-        resultParraf.innerHTML = 'You won, congratulations!'
-        resultText.innerHTML = value;
-        resultParraf.classList.add('background1');
-        resultParraf.classList.remove('background2', 'background3');
+    switch (true) {
 
+        case (select === value):
+            resultParraf.innerHTML = 'Draw!';
+            resultParraf.classList.add('background3');
+            resultParraf.classList.remove('background2', 'background1');
+            break;
+        case (select === 'rock' && value === 'scissors' || select === 'paper' && value === 'rock' || select === 'scissors' && value === 'paper'):
+            resultParraf.innerHTML = 'You won, congratulations!';
+            resultText.innerHTML = value;
+            resultParraf.classList.add('background1');
+            resultParraf.classList.remove('background2', 'background3');
+            break;
+        case (select === 'paper' && value === 'scissors' || select === 'rock' && value === 'paper' || select === 'scissors' && value === 'rock'):
+            resultParraf.innerHTML = 'You lost, try again!';
+            resultText.innerHTML = value;
+            resultParraf.classList.add('background2');
+            resultParraf.classList.remove('background1', 'background3');
+            break;
+        default:
+            console.log('hey, ho');
     }
-    else if (select === 'paper' && value === 'scissors' || select === 'rock' && value === 'paper' || select === 'scissors' && value === 'rock') {
-        resultParraf.innerHTML = 'You lost, try again!'
-        resultText.innerHTML = value;
-        resultParraf.classList.add('background2');
-        resultParraf.classList.remove('background1', 'background3');
-    }
+
     if (value === 'rock') {
         resultContainer.classList.add('rock');
         resultContainer.classList.remove('scissors');
@@ -47,9 +52,10 @@ const choose = (ev) => {
         resultContainer.classList.remove('scissors');
         resultContainer.classList.remove('rock');
     }
-
-
 }
+
+
+
 
 
 
